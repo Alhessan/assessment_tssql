@@ -1,5 +1,6 @@
 # specific to this repo
 *.scratchpad*
+.vscode/
 generated
 cdk.*
 !cdk.json
