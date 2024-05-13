@@ -84,6 +84,7 @@ describe("create", async () => {
       });
 
       // Assert on making upgrade that the cost of the subscription is 150
+      //that means we should charge the customer 150 - 100 = 50 more
       expect(updatedSubscription?.cost).toBe(150);
     });
   });
