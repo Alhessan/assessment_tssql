@@ -1,9 +1,12 @@
 
 ## schema design implementation (bonus)
 - subscriptions
+
 NOTE: I have implemented a subscription table and used it in my solution
 - orders
+
 it could be something like:
+
 export const orders = sqliteTable("orders", {
   id: integer("id").primaryKey().notNull(),
   order_date: timestamp("order_date").notNull(),
@@ -16,6 +19,7 @@ export const orders = sqliteTable("orders", {
   serial_number: text("serial_number").notNull(),
 });
 - subscriptionActivations
+
 export const subscriptionActivations = sqliteTable("subscription_activations", {
   id: integer("id").primaryKey().notNull(),
   activationCode: text("activation_code").notNull(),
