@@ -6,7 +6,7 @@ NOTE: I have implemented a subscription table and used it in my solution
 - orders
 
 it could be something like:
-
+```typescript
 export const orders = sqliteTable("orders", {
   id: integer("id").primaryKey().notNull(),
   order_date: timestamp("order_date").notNull(),
@@ -18,8 +18,9 @@ export const orders = sqliteTable("orders", {
   notes: text("notes"),
   serial_number: text("serial_number").notNull(),
 });
+```
 - subscriptionActivations
-
+```typescript
 export const subscriptionActivations = sqliteTable("subscription_activations", {
   id: integer("id").primaryKey().notNull(),
   activationCode: text("activation_code").notNull(),
@@ -31,7 +32,7 @@ export const subscriptionActivations = sqliteTable("subscription_activations", {
     .references(() => subscriptions.id, { onDelete: "restrict", onUpdate: "restrict" }),
   activationDate: timestamp("activation_date").notNull(),
 });
-
+```
 ## question (bonus)
 
 If you were to introduce two more props to plans:
@@ -45,5 +46,3 @@ ANSWER:
 if a user upgraded and he exists in the 'defaultUsers' of  a plan we should remove him.
 also -possibly-  when calculating the cost of upgrade we should consider 'pricePerUser' instead of normal price
 
-### answer here:
----
